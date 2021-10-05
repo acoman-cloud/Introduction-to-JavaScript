@@ -118,11 +118,29 @@ Puppies less than 1 year
 NOTE: If done correctly, a weight of 15 lbs and age of 1 year would return 0.44999999999999996
 */  
 
-function hungryDog(/*add your code here*/){
+function hungryDog(/*add your code here*/dogWeight, dogYears){
   /*add your code here*/
+  if(dogYears >= 1){
+  if(dogWeight > 15){
+    return .02*dogWeight;
+  }else if(dogWeight <= 15 && dogWeight >= 11){
+    return .03*dogWeight;
+  }else if(dogWeight <= 10 && dogWeight >= 6){
+    return .04*dogWeight;
+  }else if(dogWeight <= 5 && dogYears >= 1){
+    return .05*dogWeight;
+  }else{
+    if (dogYears < (4/12) && dogYears <= (2/12)){
+      return .1*dogWeight;
+    }else if(dogYears < (7/12) && dogYears < (4/12)){
+        return .05*dogWeight;
+    } else if (dogYears <1 && dogYears < (7/12)){
+        return .4*dogWeight;
+    }
+  }
 }
-
-
+}
+console.log(hungryDog(5,1));
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -145,10 +163,39 @@ RULES OF THE GAME: Scissors beats Paper | Paper beats Rock | Rock beats Scissors
 HINT: Remember that the order in which we pass in our arguments matters when it comes to parameters
 */
 
+let comp = Math.floor(Math.random()*3)
+
 function game(user, computer){
   /*add your code here*/
+  computer = comp;
+  let userChoice = user;
+  if(userChoice === 'Rock'||userChoice === 'rock'){
+      if(computer===1){
+        return "you lose!";
+      }else if(computer===0){
+        return "it's a tie";
+      }else {
+        return "you win!";
+      }
+  }else if(userChoice === 'Paper' ||userChoice === 'paper'){
+    if(computer===2){
+      return "you lose!";
+    }else if(computer===1){
+      return "it's a tie";
+    }else{
+      return "you win!";
+    }
+  }else if(userChoice === 'Scissors' ||userChoice === 'scissors'){
+    if(computer===0){
+      return "you lose!";
+    }else if(computer===2){
+      return "it's a tie";
+    }else{
+      return "you win!";
+    }
+  }
 }
-
+console.log(game('paper',comp));
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
