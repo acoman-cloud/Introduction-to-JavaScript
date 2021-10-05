@@ -245,7 +245,7 @@ Using the annoyingSong function below do the following:
 
 function annoyingSong(/*add your code here*/repetition){
       /*add your code here*/
-      for(let i = repetition; i===0;i--){
+      for(let i = repetition; i >0;i--){
         return `${i} bottles of soda on the wall, ${i} bottles of soda, take one down pass it around ${i - 1} bottles of soda on the wall`;
       }
 }
@@ -266,8 +266,19 @@ Using the grade function below do the following:
  below should return 'you got an F'
 */
 
-function grade(/*Your Code here */){
+function grade(/*Your Code here */scoreOutOfAHundredHere){
 /*Your Code here */
+  if(scoreOutOfAHundredHere <= 100 && scoreOutOfAHundredHere >= 90){
+    return 'you got an A';
+  }else if(scoreOutOfAHundredHere <= 89 && scoreOutOfAHundredHere >= 80){
+    return 'you got a B';
+  }else if(scoreOutOfAHundredHere <= 79 && scoreOutOfAHundredHere >= 70){
+    return 'you got a C';
+  }else if (scoreOutOfAHundredHere <= 69 && scoreOutOfAHundredHere >= 60){
+    return 'you got a D';
+  }else{
+    return 'you got an F';
+  }
 }
 
 
