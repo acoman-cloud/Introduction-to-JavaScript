@@ -121,26 +121,27 @@ NOTE: If done correctly, a weight of 15 lbs and age of 1 year would return 0.449
 function hungryDog(/*add your code here*/dogWeight, dogYears){
   /*add your code here*/
   if(dogYears >= 1){
-  if(dogWeight > 15){
-    return .02*dogWeight;
-  }else if(dogWeight <= 15 && dogWeight >= 11){
-    return .03*dogWeight;
-  }else if(dogWeight <= 10 && dogWeight >= 6){
-    return .04*dogWeight;
-  }else if(dogWeight <= 5 && dogYears >= 1){
-    return .05*dogWeight;
-  }else{
-    if (dogYears < (4/12) && dogYears <= (2/12)){
-      return .1*dogWeight;
-    }else if(dogYears < (7/12) && dogYears < (4/12)){
+    if(dogWeight > 15){
+      return .02*dogWeight;
+    }else if(dogWeight <= 15 && dogWeight >= 11){
+      return .03*dogWeight;
+    }else if(dogWeight <= 10 && dogWeight >= 6){
+      return .04*dogWeight;
+    }else if(dogWeight <= 5 && dogYears >= 1){
+      return .05*dogWeight;
+    }
+  }
+  if(dogYears<1){
+    if (dogYears < .333 && dogYears >= .166){
+        return 0.1*dogWeight;
+      }else if(dogYears < .583 && dogYears >= .333){
         return .05*dogWeight;
-    } else if (dogYears <1 && dogYears < (7/12)){
-        return .4*dogWeight;
+      } else if (dogYears <1 && dogYears >= .583){
+        return .04*dogWeight;
     }
   }
 }
-}
-console.log(hungryDog(5,1));
+console.log(hungryDog(4, 0.583));
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -167,28 +168,28 @@ let comp = Math.floor(Math.random()*3)
 
 function game(user, computer){
   /*add your code here*/
-  computer = comp;
+  //computer = comp;
   let userChoice = user;
-  if(userChoice === 'Rock'||userChoice === 'rock'){
-      if(computer===1){
+  if(userChoice === 'rock'){
+      if(computer==='paper'){
         return "you lose!";
-      }else if(computer===0){
+      }else if(computer==='rock'){
         return "it's a tie";
       }else {
         return "you win!";
       }
-  }else if(userChoice === 'Paper' ||userChoice === 'paper'){
-    if(computer===2){
+  }else if(userChoice === 'paper'){
+    if(computer==='scissors'){
       return "you lose!";
-    }else if(computer===1){
+    }else if(computer==='paper'){
       return "it's a tie";
     }else{
       return "you win!";
     }
-  }else if(userChoice === 'Scissors' ||userChoice === 'scissors'){
-    if(computer===0){
+  }else if(userChoice === 'scissors'){
+    if(computer==='rock'){
       return "you lose!";
-    }else if(computer===2){
+    }else if(computer==='scissors'){
       return "it's a tie";
     }else{
       return "you win!";
@@ -209,13 +210,15 @@ Using the miles function below do the following:
 3. Return the number of miles
 */
 
-function miles(/*add your code here*/){
+function miles(/*add your code here*/kiloHere){
   /*add your code here*/
+  return .621371 * kiloHere;
 }
+console.log(miles(52));
 
 
 
-//Task 5b - Feet to CM
+//Task 5b - Feet to CM //why is this task called FEET to cm?
 /*
 Using the feet function below do the following:
 1. Receive a number of cm
@@ -223,11 +226,12 @@ Using the feet function below do the following:
 3. Return number of feet
 */
 
-function feet(/*add your code here*/){
+function feet(/*add your code here*/cmHere){
   /*add your code here*/
+  return cmHere/30.48;
 }
 
-
+console.log(feet(186))
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -239,10 +243,13 @@ Using the annoyingSong function below do the following:
     "{number} bottles of soda on the wall, {number} bottles of soda, take one down pass it around {number left over} bottles of soda on the wall"
 */
 
-function annoyingSong(/*add your code here*/){
+function annoyingSong(/*add your code here*/repetition){
       /*add your code here*/
+      for(let i = repetition; i===0;i--){
+        return `${i} bottles of soda on the wall, ${i} bottles of soda, take one down pass it around ${i - 1} bottles of soda on the wall`;
+      }
 }
-
+console.log(annoyingSong(5));
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
